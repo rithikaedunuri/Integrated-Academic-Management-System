@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Examinations</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Academic Management System</h1>
+
+        <button onclick="toggleMode()" class="logout-btn">
+    🌙 Mode
+</button>
+
+<a href="dashboard.html">
+    <button class="logout-btn">Back</button>
+</a>
+
+    </div>
+
+    <div class="hallticket-container">
+
+        <h2>Examinations Management</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Total Exams</h3>
+
+                <p>12 Exams Scheduled</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Departments</h3>
+
+                <p>5 Departments Participating</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Exam Centers</h3>
+
+                <p>8 Blocks Allocated</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Invigilators</h3>
+
+                <p>48 Faculty Assigned</p>
+
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <div class="ticket-box">
+
+            <h2>Upcoming Examination Schedule</h2>
+
+            <table>
+
+                <tr>
+                    <th>Exam Code</th>
+                    <th>Subject</th>
+                    <th>Department</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>CS401</td>
+                    <td>Database Management Systems</td>
+                    <td>CSE</td>
+                    <td>20-05-2026</td>
+                    <td>10:00 AM - 1:00 PM</td>
+                    <td>Scheduled</td>
+                </tr>
+
+                <tr>
+                    <td>EC302</td>
+                    <td>Digital Electronics</td>
+                    <td>ECE</td>
+                    <td>21-05-2026</td>
+                    <td>10:00 AM - 1:00 PM</td>
+                    <td>Scheduled</td>
+                </tr>
+
+                <tr>
+                    <td>EE210</td>
+                    <td>Power Systems</td>
+                    <td>EEE</td>
+                    <td>22-05-2026</td>
+                    <td>2:00 PM - 5:00 PM</td>
+                    <td>Scheduled</td>
+                </tr>
+
+                <tr>
+                    <td>ME315</td>
+                    <td>Thermodynamics</td>
+                    <td>MECH</td>
+                    <td>23-05-2026</td>
+                    <td>10:00 AM - 1:00 PM</td>
+                    <td>Scheduled</td>
+                </tr>
+
+                <tr>
+                    <td>CV420</td>
+                    <td>Structural Analysis</td>
+                    <td>CIVIL</td>
+                    <td>24-05-2026</td>
+                    <td>2:00 PM - 5:00 PM</td>
+                    <td>Scheduled</td>
+                </tr>
+
+                <tr>
+                    <td>CS405L</td>
+                    <td>DBMS Lab</td>
+                    <td>CSE</td>
+                    <td>25-05-2026</td>
+                    <td>9:00 AM - 12:00 PM</td>
+                    <td>Lab Exam</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+    <script>
+
+function toggleMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("theme", "dark");
+    }
+
+    else {
+
+        localStorage.setItem("theme", "light");
+    }
+}
+
+window.onload = function () {
+
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+    }
+}
+
+</script>
+
+</body>
+
+</html>

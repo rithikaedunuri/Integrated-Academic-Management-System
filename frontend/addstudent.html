@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Add Student</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Academic Management System</h1>
+
+        <a href="admin.html">
+            <button class="logout-btn">Back</button>
+        </a>
+
+    </div>
+
+    <div class="hallticket-container">
+
+        <h2>Student Registration</h2>
+
+        <div class="ticket-box">
+
+            <label>Student Name</label>
+
+            <br><br>
+
+            <input type="text" id="name" placeholder="Enter Student Name">
+
+            <br><br><br>
+
+            <label>Roll Number</label>
+
+            <br><br>
+
+            <input type="text" id="rollno" placeholder="Enter Roll Number">
+
+            <br><br><br>
+
+            <label>Department</label>
+
+            <br><br>
+
+            <select id="department">
+
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>MECH</option>
+                <option>CIVIL</option>
+
+            </select>
+
+            <br><br><br>
+
+            <label>Year of Study</label>
+
+            <br><br>
+
+            <select id="year">
+
+                <option>1st Year</option>
+                <option>2nd Year</option>
+                <option>3rd Year</option>
+                <option>4th Year</option>
+
+            </select>
+
+            <br><br><br>
+
+            <button class="download-btn" onclick="registerStudent()">
+                Register Student
+            </button>
+
+            <br><br>
+
+            <h3 id="message"></h3>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function registerStudent() {
+
+            let name = document.getElementById("name").value;
+            let roll = document.getElementById("rollno").value;
+            let dept = document.getElementById("department").value;
+            let year = document.getElementById("year").value;
+
+            document.getElementById("message").innerHTML =
+            "Student " + name + " (" + roll + ") successfully registered in " + dept + " - " + year;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

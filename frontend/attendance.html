@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Attendance Management</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Academic Management System</h1>
+
+        <button onclick="toggleMode()" class="logout-btn">
+    🌙 Mode
+</button>
+
+<a href="dashboard.html">
+    <button class="logout-btn">Back</button>
+</a>
+
+    </div>
+
+    <div class="hallticket-container">
+
+        <h2>Attendance Management</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Total Classes</h3>
+
+                <p>120 Classes Conducted</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Average Attendance</h3>
+
+                <p>88% Overall Attendance</p>
+
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <div class="ticket-box">
+
+            <h2>Student Attendance Records</h2>
+
+            <br>
+
+            <input type="text"
+                   id="attendanceSearch"
+                   placeholder="Search Student..."
+                   onkeyup="searchAttendance()"
+                   style="
+                   width: 300px;
+                   padding: 12px;
+                   border-radius: 8px;
+                   border: 1px solid gray;
+                   font-size: 16px;">
+
+            <br><br>
+
+            <table>
+
+                <tr>
+                    <th>Roll Number</th>
+                    <th>Student Name</th>
+                    <th>Department</th>
+                    <th>Classes Attended</th>
+                    <th>Total Classes</th>
+                    <th>Attendance %</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>23R21A05AK</td>
+                    <td>Edunuri Rithika</td>
+                    <td>CSE</td>
+                    <td>112</td>
+                    <td>120</td>
+                    <td>93%</td>
+                    <td>Present</td>
+                </tr>
+
+                <tr>
+                    <td>23R21A05AL</td>
+                    <td>Gajjale Sowmya</td>
+                    <td>CSE</td>
+                    <td>108</td>
+                    <td>120</td>
+                    <td>90%</td>
+                    <td>Present</td>
+                </tr>
+
+                <tr>
+                    <td>23R21A05AF</td>
+                    <td>Chukka Pallavi</td>
+                    <td>CSE</td>
+                    <td>95</td>
+                    <td>120</td>
+                    <td>79%</td>
+                    <td>Shortage</td>
+                </tr>
+
+                <tr>
+                    <td>22R21A0301</td>
+                    <td>H. Akhil</td>
+                    <td>MECH</td>
+                    <td>118</td>
+                    <td>120</td>
+                    <td>98%</td>
+                    <td>Present</td>
+                </tr>
+
+                <tr>
+                    <td>21R21A0102</td>
+                    <td>K. Bhavana</td>
+                    <td>CIVIL</td>
+                    <td>88</td>
+                    <td>120</td>
+                    <td>73%</td>
+                    <td>Shortage</td>
+                </tr>
+                <tr>
+                    <td>21R21A0103</td>
+                    <td>D. Keethi</td>
+                    <td>CIVIL</td>
+                    <td>109</td>
+                    <td>120</td>
+                    <td>93%</td>
+                    <td>Present</td>
+                </tr>
+                <tr>
+                    <td>23R21A05AF</td>
+                    <td>Chukka Pallavi</td>
+                    <td>CSE</td>
+                    <td>95</td>
+                    <td>120</td>
+                    <td>79%</td>
+                    <td>Shortage</td>
+                </tr>
+                <tr>
+                    <td>23R21A05AK</td>
+                    <td>Edunuri Rithika</td>
+                    <td>CSE</td>
+                    <td>112</td>
+                    <td>120</td>
+                    <td>93%</td>
+                    <td>Present</td>
+                </tr>
+                <tr>
+                    <td>22R21A0301</td>
+                    <td>H. Akhil</td>
+                    <td>MECH</td>
+                    <td>118</td>
+                    <td>120</td>
+                    <td>98%</td>
+                    <td>Present</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function searchAttendance() {
+
+            let input =
+            document.getElementById("attendanceSearch")
+            .value.toLowerCase();
+
+            let table = document.querySelector("table");
+
+            let tr = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < tr.length; i++) {
+
+                let rowText =
+                tr[i].textContent.toLowerCase();
+
+                if (rowText.includes(input)) {
+
+                    tr[i].style.display = "";
+
+                }
+
+                else {
+
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+
+    </script>
+    <script>
+
+function toggleMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("theme", "dark");
+    }
+
+    else {
+
+        localStorage.setItem("theme", "light");
+    }
+}
+
+window.onload = function () {
+
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+    }
+}
+
+</script>
+
+</body>
+
+</html>

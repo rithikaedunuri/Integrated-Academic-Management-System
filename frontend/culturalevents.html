@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Cultural Events</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Academic Management System</h1>
+        <button onclick="toggleMode()" class="logout-btn">
+    🌙 Mode
+</button>
+
+        <a href="clubs.html">
+            <button class="logout-btn">Back</button>
+        </a>
+
+    </div>
+
+    <div class="hallticket-container">
+
+        <h2>Cultural Events & Celebrations</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Annual Day</h3>
+
+                <p>College Annual Celebrations</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Ecstasy Fest</h3>
+
+                <p>Music, Dance & Cultural Fest</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Traditional Day</h3>
+
+                <p>Traditional Dress & Activities</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Helenic</h3>
+
+                <p>Dance & Entertainment Programs</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Bathukamma</h3>
+
+                <p>Traditional Telangana Festival</p>
+
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <div class="ticket-box">
+
+            <h2>Event Coordinators</h2>
+
+            <table>
+
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                    <th>Coordinator</th>
+                    <th>Contact</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>Annual Day</td>
+                    <td>12-07-2026</td>
+                    <td>Priya Sharma</td>
+                    <td>9876501234</td>
+                    <td>Scheduled</td>
+                </tr>
+
+                <tr>
+                    <td>Ecstasy Fest</td>
+                    <td>20-07-2026</td>
+                    <td>Vamshi Krishna</td>
+                    <td>9123409876</td>
+                    <td>Upcoming</td>
+                </tr>
+
+                <tr>
+                    <td>Traditional Day</td>
+                    <td>28-07-2026</td>
+                    <td>Sindhu Rani</td>
+                    <td>9988771100</td>
+                    <td>Upcoming</td>
+                </tr>
+
+                <tr>
+                    <td>Helenic</td>
+                    <td>05-08-2026</td>
+                    <td>Arjun Reddy</td>
+                    <td>9345612789</td>
+                    <td>Planned</td>
+                </tr>
+
+                <tr>
+                    <td>Bathukamma</td>
+                    <td>15-08-2026</td>
+                    <td>Kavya Sri</td>
+                    <td>9011223344</td>
+                    <td>Planned</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+    <script>
+
+function toggleMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("theme", "dark");
+    }
+
+    else {
+
+        localStorage.setItem("theme", "light");
+    }
+}
+
+window.onload = function () {
+
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+    }
+}
+
+</script>
+
+</body>
+
+</html>

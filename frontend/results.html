@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Results</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Academic Management System</h1>
+
+        <button onclick="toggleMode()" class="logout-btn">
+    🌙 Mode
+</button>
+
+<a href="dashboard.html">
+    <button class="logout-btn">Back</button>
+</a>
+
+    </div>
+
+    <div class="hallticket-container">
+
+        <h2>Results Dashboard</h2>
+
+        <div class="ticket-box">
+
+            <label>Enter Roll Number</label>
+
+            <br><br>
+
+            <input type="text" id="rollno" placeholder="Enter Roll Number">
+
+            <br><br><br>
+
+            <label>Select Semester</label>
+
+            <br><br>
+
+            <select id="semester">
+
+                <option>I - I</option>
+                <option>I - II</option>
+                <option>II - I</option>
+                <option>II - II</option>
+                <option>III - I</option>
+                <option>III - II</option>
+                <option>IV - I</option>
+                <option>IV - II</option>
+
+            </select>
+
+            <br><br><br>
+
+            <button class="download-btn" onclick="showResults()">
+                View Results
+            </button>
+
+            <br><br><br>
+
+            <div id="results-data"></div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function showResults() {
+
+            let roll = document.getElementById("rollno").value.toLowerCase();
+            let sem = document.getElementById("semester").value;
+
+            let studentName = "";
+
+            if (roll === "23r21a05ak") {
+                studentName = "Edunuri Rithika";
+            }
+
+            else if (roll === "23r21a05al") {
+                studentName = "Gajjale Sowmya";
+            }
+
+            else if (roll === "23r21a05af") {
+                studentName = "Chukka Pallavi";
+            }
+
+            else if (roll === "23r21a05ap") {
+                studentName = "Gopishetty Jyothi";
+            }
+
+            else if (roll === "23r21a05bg") {
+                studentName = "Chukka Harshitha";
+            }
+
+            else {
+                studentName = "Student Not Found";
+            }
+
+            let results = "";
+
+            if (sem === "IV - I") {
+
+                results = `
+
+                <tr>
+                    <td>CS401</td>
+                    <td>Database Management Systems</td>
+                    <td>A</td>
+                    <td>85</td>
+                    <td>Pass</td>
+                </tr>
+
+                <tr>
+                    <td>CS402</td>
+                    <td>Operating Systems</td>
+                    <td>A+</td>
+                    <td>91</td>
+                    <td>Pass</td>
+                </tr>
+
+                <tr>
+                    <td>CS403</td>
+                    <td>Computer Networks</td>
+                    <td>B+</td>
+                    <td>78</td>
+                    <td>Pass</td>
+                </tr>
+
+                <tr>
+                    <td>CS404</td>
+                    <td>Software Engineering</td>
+                    <td>A</td>
+                    <td>88</td>
+                    <td>Pass</td>
+                </tr>
+
+                `;
+            }
+
+            else if (sem === "III - II") {
+
+                results = `
+
+                <tr>
+                    <td>CS301</td>
+                    <td>Java Programming</td>
+                    <td>A</td>
+                    <td>84</td>
+                    <td>Pass</td>
+                </tr>
+
+                <tr>
+                    <td>CS302</td>
+                    <td>Web Technologies</td>
+                    <td>A+</td>
+                    <td>92</td>
+                    <td>Pass</td>
+                </tr>
+
+                <tr>
+                    <td>CS303</td>
+                    <td>Data Structures</td>
+                    <td>B+</td>
+                    <td>76</td>
+                    <td>Pass</td>
+                </tr>
+
+                <tr>
+                    <td>CS304</td>
+                    <td>Python Programming</td>
+                    <td>A</td>
+                    <td>87</td>
+                    <td>Pass</td>
+                </tr>
+
+                `;
+            }
+
+            else {
+
+                results = `
+
+                <tr>
+                    <td>BS101</td>
+                    <td>Mathematics</td>
+                    <td>A</td>
+                    <td>82</td>
+                    <td>Pass</td>
+                </tr>
+
+                <tr>
+                    <td>BS102</td>
+                    <td>Physics</td>
+                    <td>B+</td>
+                    <td>75</td>
+                    <td>Pass</td>
+                </tr>
+
+                <tr>
+                    <td>CS103</td>
+                    <td>C Programming</td>
+                    <td>A+</td>
+                    <td>93</td>
+                    <td>Pass</td>
+                </tr>
+
+                <tr>
+                    <td>HS104</td>
+                    <td>English</td>
+                    <td>A</td>
+                    <td>86</td>
+                    <td>Pass</td>
+                </tr>
+
+                `;
+            }
+
+            document.getElementById("results-data").innerHTML = `
+
+            <div class="ticket-box">
+
+                <h2>Semester Results</h2>
+
+                <p><strong>Name:</strong> ${studentName}</p>
+
+                <p><strong>Roll Number:</strong> ${roll}</p>
+
+                <p><strong>Semester:</strong> ${sem}</p>
+
+                <table>
+
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject</th>
+                        <th>Grade</th>
+                        <th>Marks</th>
+                        <th>Status</th>
+                    </tr>
+
+                    ${results}
+
+                </table>
+
+                <br>
+
+                <h3>SGPA : 8.9</h3>
+
+            </div>
+
+            `;
+        }
+
+    </script>
+    <script>
+
+function toggleMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("theme", "dark");
+    }
+
+    else {
+
+        localStorage.setItem("theme", "light");
+    }
+}
+
+window.onload = function () {
+
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+    }
+}
+
+</script>
+
+</body>
+
+</html>

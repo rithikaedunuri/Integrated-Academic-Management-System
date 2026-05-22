@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Club Coordinators</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Academic Management System</h1>
+        <button onclick="toggleMode()" class="logout-btn">
+    🌙 Mode
+</button>
+
+        <a href="clubs.html">
+            <button class="logout-btn">Back</button>
+        </a>
+
+    </div>
+
+    <div class="hallticket-container">
+
+        <h2>Club Coordinators & Contacts</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Total Coordinators</h3>
+
+                <p>12 Student Coordinators Assigned</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Technical Clubs</h3>
+
+                <p>5 Active Clubs</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Cultural Teams</h3>
+
+                <p>5 Event Management Teams</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Hackathon Leads</h3>
+
+                <p>3 Technical Event Coordinators</p>
+
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <div class="ticket-box">
+
+            <h2>Coordinator Details</h2>
+
+            <table>
+
+                <tr>
+                    <th>Coordinator Name</th>
+                    <th>Club / Event</th>
+                    <th>Department</th>
+                    <th>Contact Number</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>Edunuri Rithika</td>
+                    <td>Coding Club</td>
+                    <td>CSE</td>
+                    <td>9876543210</td>
+                    <td>rithika@gmail.com</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>Rahul Verma</td>
+                    <td>AI & ML Club</td>
+                    <td>CSE</td>
+                    <td>9123456780</td>
+                    <td>rahul@gmail.com</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>Sneha Reddy</td>
+                    <td>Cyber Security Club</td>
+                    <td>CSE</td>
+                    <td>9988776655</td>
+                    <td>sneha@gmail.com</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>Vamshi Krishna</td>
+                    <td>Ecstasy Fest</td>
+                    <td>ECE</td>
+                    <td>9345612789</td>
+                    <td>vamshi@gmail.com</td>
+                    <td>Upcoming Event</td>
+                </tr>
+
+                <tr>
+                    <td>Sindhu Rani</td>
+                    <td>Traditional Day</td>
+                    <td>EEE</td>
+                    <td>9011223344</td>
+                    <td>sindhu@gmail.com</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>Kavya Sri</td>
+                    <td>Bathukamma Celebration</td>
+                    <td>CIVIL</td>
+                    <td>9871200456</td>
+                    <td>kavya@gmail.com</td>
+                    <td>Planned</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+    <script>
+
+function toggleMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("theme", "dark");
+    }
+
+    else {
+
+        localStorage.setItem("theme", "light");
+    }
+}
+
+window.onload = function () {
+
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+    }
+}
+
+</script>
+
+</body>
+
+</html>

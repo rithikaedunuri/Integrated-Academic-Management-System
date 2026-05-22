@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Hackathons</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Academic Management System</h1>
+        <button onclick="toggleMode()" class="logout-btn">
+    🌙 Mode
+</button>
+
+        <a href="clubs.html">
+            <button class="logout-btn">Back</button>
+        </a>
+
+    </div>
+
+    <div class="hallticket-container">
+
+        <h2>Hackathons & Technical Competitions</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>CodeSprint 2026</h3>
+
+                <p>24-Hour National Coding Hackathon</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Smart India Hackathon</h3>
+
+                <p>Government Innovation Challenge</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>HackFest</h3>
+
+                <p>Inter-College Development Competition</p>
+
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <div class="ticket-box">
+
+            <h2>Hackathon Details</h2>
+
+            <table>
+
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                    <th>Venue</th>
+                    <th>Coordinator</th>
+                    <th>Contact</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>CodeSprint 2026</td>
+                    <td>15-06-2026</td>
+                    <td>Block A Seminar Hall</td>
+                    <td>Edunuri Rithika</td>
+                    <td>9876543210</td>
+                    <td>Upcoming</td>
+                </tr>
+
+                <tr>
+                    <td>Smart India Hackathon</td>
+                    <td>25-06-2026</td>
+                    <td>Main Auditorium</td>
+                    <td>Rahul Verma</td>
+                    <td>9123456780</td>
+                    <td>Registrations Open</td>
+                </tr>
+
+                <tr>
+                    <td>HackFest</td>
+                    <td>05-07-2026</td>
+                    <td>Innovation Lab</td>
+                    <td>Sneha Reddy</td>
+                    <td>9988776655</td>
+                    <td>Planned</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+    <script>
+
+function toggleMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("theme", "dark");
+    }
+
+    else {
+
+        localStorage.setItem("theme", "light");
+    }
+}
+
+window.onload = function () {
+
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+    }
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Syllabus</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Academic Management System</h1>
+
+       <button onclick="toggleMode()" class="logout-btn">
+    🌙 Mode
+</button>
+
+<a href="dashboard.html">
+    <button class="logout-btn">Back</button>
+</a>
+
+    </div>
+
+    <div class="hallticket-container">
+
+        <h2>Syllabus Dashboard</h2>
+
+        <div class="ticket-box">
+
+            <label>Select Semester</label>
+
+            <br><br>
+
+            <select id="semester">
+
+                <option>I - I</option>
+                <option>I - II</option>
+                <option>II - I</option>
+                <option>II - II</option>
+                <option>III - I</option>
+                <option>III - II</option>
+                <option>IV - I</option>
+                <option>IV - II</option>
+
+            </select>
+
+            <br><br>
+
+            <button class="download-btn" onclick="showSyllabus()">
+                View Syllabus
+            </button>
+
+            <br><br><br>
+
+            <div id="syllabus-data"></div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function showSyllabus() {
+
+            let sem = document.getElementById("semester").value;
+
+            let syllabus = "";
+
+            if (sem === "IV - I") {
+
+                syllabus = `
+
+                <div class="cards">
+
+                    <div class="card">
+
+                        <h3>Database Management Systems</h3>
+
+                        <p>
+                            Chapter 1: ER Models & Relational Model<br>
+                            • Entity Sets<br>
+                            • Keys & Attributes<br><br>
+
+                            Chapter 2: SQL Queries<br>
+                            • SELECT Queries<br>
+                            • Joins & Nested Queries<br><br>
+
+                            Chapter 3: Normalization<br>
+                            • 1NF, 2NF, 3NF<br>
+                            • Functional Dependencies<br><br>
+
+                            Chapter 4: Transactions<br>
+                            • ACID Properties<br>
+                            • Concurrency Control<br><br>
+
+                            Chapter 5: Database Security<br>
+                            • Authorization<br>
+                            • Backup & Recovery
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>Operating Systems</h3>
+
+                        <p>
+                            Chapter 1: Process Management<br>
+                            • Process States<br>
+                            • PCB<br><br>
+
+                            Chapter 2: CPU Scheduling<br>
+                            • FCFS<br>
+                            • Round Robin<br><br>
+
+                            Chapter 3: Deadlocks<br>
+                            • Prevention<br>
+                            • Avoidance<br><br>
+
+                            Chapter 4: Memory Management<br>
+                            • Paging<br>
+                            • Segmentation<br><br>
+
+                            Chapter 5: File Systems<br>
+                            • File Allocation<br>
+                            • Disk Scheduling
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>Computer Networks</h3>
+
+                        <p>
+                            Chapter 1: OSI Model<br>
+                            • Layers<br>
+                            • Protocols<br><br>
+
+                            Chapter 2: Routing<br>
+                            • Static Routing<br>
+                            • Dynamic Routing<br><br>
+
+                            Chapter 3: TCP/IP<br>
+                            • IP Addressing<br>
+                            • Subnetting<br><br>
+
+                            Chapter 4: Data Link Layer<br>
+                            • Error Detection<br>
+                            • Flow Control<br><br>
+
+                            Chapter 5: Network Security<br>
+                            • Firewalls<br>
+                            • Cryptography
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>Software Engineering</h3>
+
+                        <p>
+                            Chapter 1: SDLC Models<br>
+                            • Waterfall Model<br>
+                            • Spiral Model<br><br>
+
+                            Chapter 2: Requirement Analysis<br>
+                            • SRS Document<br>
+                            • Feasibility Study<br><br>
+
+                            Chapter 3: Software Design<br>
+                            • UML Diagrams<br>
+                            • Architecture Design<br><br>
+
+                            Chapter 4: Testing<br>
+                            • Unit Testing<br>
+                            • Integration Testing<br><br>
+
+                            Chapter 5: Maintenance<br>
+                            • Software Updates<br>
+                            • Bug Fixing
+                        </p>
+
+                    </div>
+
+                </div>
+                `;
+            }
+
+            else if (sem === "III - II") {
+
+                syllabus = `
+
+                <div class="cards">
+
+                    <div class="card">
+
+                        <h3>Java Programming</h3>
+
+                        <p>
+                            Chapter 1: OOP Concepts<br>
+                            • Classes & Objects<br>
+                            • Encapsulation<br><br>
+
+                            Chapter 2: Inheritance<br>
+                            • Types of Inheritance<br>
+                            • Method Overriding<br><br>
+
+                            Chapter 3: Exception Handling<br>
+                            • Try & Catch<br>
+                            • Throws Keyword<br><br>
+
+                            Chapter 4: Multithreading<br>
+                            • Thread Lifecycle<br>
+                            • Synchronization<br><br>
+
+                            Chapter 5: Collections Framework<br>
+                            • ArrayList<br>
+                            • HashMap
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>Web Technologies</h3>
+
+                        <p>
+                            Chapter 1: HTML<br>
+                            • Forms<br>
+                            • Tables<br><br>
+
+                            Chapter 2: CSS<br>
+                            • Flexbox<br>
+                            • Animations<br><br>
+
+                            Chapter 3: JavaScript<br>
+                            • DOM<br>
+                            • Events<br><br>
+
+                            Chapter 4: Bootstrap<br>
+                            • Grid System<br>
+                            • Components<br><br>
+
+                            Chapter 5: Responsive Design<br>
+                            • Media Queries<br>
+                            • Mobile Layouts
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>Python Programming</h3>
+
+                        <p>
+                            Chapter 1: Basics of Python<br>
+                            • Variables<br>
+                            • Operators<br><br>
+
+                            Chapter 2: Functions<br>
+                            • Arguments<br>
+                            • Recursion<br><br>
+
+                            Chapter 3: File Handling<br>
+                            • Read & Write<br>
+                            • CSV Files<br><br>
+
+                            Chapter 4: OOP in Python<br>
+                            • Classes<br>
+                            • Inheritance<br><br>
+
+                            Chapter 5: Libraries<br>
+                            • NumPy<br>
+                            • Pandas
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>Data Structures</h3>
+
+                        <p>
+                            Chapter 1: Arrays<br>
+                            • Searching<br>
+                            • Sorting<br><br>
+
+                            Chapter 2: Linked Lists<br>
+                            • Singly Linked List<br>
+                            • Doubly Linked List<br><br>
+
+                            Chapter 3: Stacks & Queues<br>
+                            • Push & Pop<br>
+                            • Queue Operations<br><br>
+
+                            Chapter 4: Trees<br>
+                            • Binary Trees<br>
+                            • BST<br><br>
+
+                            Chapter 5: Graphs<br>
+                            • BFS<br>
+                            • DFS
+                        </p>
+
+                    </div>
+
+                </div>
+                `;
+            }
+
+            else {
+
+                syllabus = `
+
+                <div class="cards">
+
+                    <div class="card">
+
+                        <h3>Mathematics</h3>
+
+                        <p>
+                            Chapter 1: Algebra<br>
+                            • Matrices<br>
+                            • Determinants<br><br>
+
+                            Chapter 2: Calculus<br>
+                            • Limits<br>
+                            • Derivatives<br><br>
+
+                            Chapter 3: Differential Equations<br>
+                            • First Order DE<br>
+                            • Applications<br><br>
+
+                            Chapter 4: Vector Calculus<br>
+                            • Gradient<br>
+                            • Divergence<br><br>
+
+                            Chapter 5: Probability<br>
+                            • Random Variables<br>
+                            • Bayes Theorem
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>Physics</h3>
+
+                        <p>
+                            Chapter 1: Mechanics<br>
+                            • Motion<br>
+                            • Energy<br><br>
+
+                            Chapter 2: Waves<br>
+                            • Sound Waves<br>
+                            • Wave Equation<br><br>
+
+                            Chapter 3: Optics<br>
+                            • Interference<br>
+                            • Diffraction<br><br>
+
+                            Chapter 4: Semiconductor Physics<br>
+                            • Diodes<br>
+                            • Transistors<br><br>
+
+                            Chapter 5: Lasers<br>
+                            • Applications<br>
+                            • Optical Fibers
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>C Programming</h3>
+
+                        <p>
+                            Chapter 1: Basics of C<br>
+                            • Variables<br>
+                            • Data Types<br><br>
+
+                            Chapter 2: Loops<br>
+                            • For Loop<br>
+                            • While Loop<br><br>
+
+                            Chapter 3: Functions<br>
+                            • Recursion<br>
+                            • Function Calls<br><br>
+
+                            Chapter 4: Arrays & Strings<br>
+                            • Multi-Dimensional Arrays<br>
+                            • String Functions<br><br>
+
+                            Chapter 5: Pointers<br>
+                            • Dynamic Memory Allocation<br>
+                            • Pointer Arithmetic
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>English</h3>
+
+                        <p>
+                            Chapter 1: Communication Skills<br>
+                            • Verbal Communication<br>
+                            • Non-Verbal Communication<br><br>
+
+                            Chapter 2: Grammar<br>
+                            • Tenses<br>
+                            • Voice & Speech<br><br>
+
+                            Chapter 3: Writing Skills<br>
+                            • Resume Writing<br>
+                            • Email Writing<br><br>
+
+                            Chapter 4: Presentation Skills<br>
+                            • Public Speaking<br>
+                            • Group Discussions<br><br>
+
+                            Chapter 5: Vocabulary<br>
+                            • Synonyms<br>
+                            • Antonyms
+                        </p>
+
+                    </div>
+
+                </div>
+                `;
+            }
+
+            document.getElementById("syllabus-data").innerHTML = syllabus;
+        }
+
+    </script>
+    <script>
+
+function toggleMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("theme", "dark");
+    }
+
+    else {
+
+        localStorage.setItem("theme", "light");
+    }
+}
+
+window.onload = function () {
+
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+    }
+}
+
+</script>
+
+</body>
+
+</html>

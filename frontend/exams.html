@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Examinations</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Academic Management System</h1>
+
+        <button onclick="toggleMode()" class="logout-btn">
+    🌙 Mode
+</button>
+
+<a href="dashboard.html">
+    <button class="logout-btn">Back</button>
+</a>
+
+    </div>
+
+    <div class="hallticket-container">
+
+        <h2>Examinations Dashboard</h2>
+
+        <div class="ticket-box">
+
+            <label>Select Semester</label>
+
+            <br><br>
+
+            <select id="semester">
+
+                <option>I - I</option>
+                <option>I - II</option>
+                <option>II - I</option>
+                <option>II - II</option>
+                <option>III - I</option>
+                <option>III - II</option>
+                <option>IV - I</option>
+                <option>IV - II</option>
+
+            </select>
+
+            <br><br>
+
+            <button class="download-btn" onclick="showExams()">
+                View Exams
+            </button>
+
+            <br><br><br>
+
+            <div id="exam-data"></div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function showExams() {
+
+    let sem = document.getElementById("semester").value;
+
+    let exams = "";
+
+    if (sem === "IV - I") {
+
+        exams = `
+
+        <tr>
+            <td>CS401</td>
+            <td>Database Management Systems</td>
+            <td>Mid Exam</td>
+            <td>20-05-2026</td>
+            <td>10:00 AM - 12:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+
+        <tr>
+            <td>CS402</td>
+            <td>Operating Systems</td>
+            <td>Mid Exam</td>
+            <td>22-05-2026</td>
+            <td>10:00 AM - 12:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+
+        <tr>
+            <td>CS403</td>
+            <td>Computer Networks</td>
+            <td>Semester Exam</td>
+            <td>24-05-2026</td>
+            <td>02:00 PM - 05:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+
+        <tr>
+            <td>CS404</td>
+            <td>Software Engineering</td>
+            <td>Semester Exam</td>
+            <td>26-05-2026</td>
+            <td>02:00 PM - 05:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+
+        <tr>
+            <td>CS405L</td>
+            <td>DBMS Lab</td>
+            <td>Practical</td>
+            <td>28-05-2026</td>
+            <td>09:00 AM - 12:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+
+        <tr>
+            <td>CS406L</td>
+            <td>OS Lab</td>
+            <td>Practical</td>
+            <td>30-05-2026</td>
+            <td>09:00 AM - 12:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+        `;
+    }
+
+    else if (sem === "III - II") {
+
+        exams = `
+
+        <tr>
+            <td>CS301</td>
+            <td>Java Programming</td>
+            <td>Mid Exam</td>
+            <td>10-05-2026</td>
+            <td>10:00 AM - 12:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+
+        <tr>
+            <td>CS302</td>
+            <td>Web Technologies</td>
+            <td>Semester Exam</td>
+            <td>12-05-2026</td>
+            <td>02:00 PM - 05:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+
+        <tr>
+            <td>CS303</td>
+            <td>Data Structures</td>
+            <td>Mid Exam</td>
+            <td>14-05-2026</td>
+            <td>10:00 AM - 12:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+
+        <tr>
+            <td>CS304</td>
+            <td>Python Programming</td>
+            <td>Semester Exam</td>
+            <td>16-05-2026</td>
+            <td>02:00 PM - 05:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+
+        <tr>
+            <td>CS305L</td>
+            <td>Python Lab</td>
+            <td>Practical</td>
+            <td>18-05-2026</td>
+            <td>09:00 AM - 12:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+
+        <tr>
+            <td>CS306L</td>
+            <td>WT Lab</td>
+            <td>Practical</td>
+            <td>20-05-2026</td>
+            <td>09:00 AM - 12:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+        `;
+    }
+
+    else {
+
+        exams = `
+
+        <tr>
+            <td>BS101</td>
+            <td>Mathematics</td>
+            <td>Mid Exam</td>
+            <td>01-05-2026</td>
+            <td>10:00 AM - 12:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+
+        <tr>
+            <td>BS102</td>
+            <td>Physics</td>
+            <td>Semester Exam</td>
+            <td>03-05-2026</td>
+            <td>02:00 PM - 05:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+
+        <tr>
+            <td>CS103</td>
+            <td>C Programming</td>
+            <td>Mid Exam</td>
+            <td>05-05-2026</td>
+            <td>10:00 AM - 12:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+
+        <tr>
+            <td>HS104</td>
+            <td>English</td>
+            <td>Semester Exam</td>
+            <td>07-05-2026</td>
+            <td>02:00 PM - 05:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+
+        <tr>
+            <td>CS105L</td>
+            <td>C Lab</td>
+            <td>Practical</td>
+            <td>09-05-2026</td>
+            <td>09:00 AM - 12:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+
+        <tr>
+            <td>BS106L</td>
+            <td>Physics Lab</td>
+            <td>Practical</td>
+            <td>11-05-2026</td>
+            <td>09:00 AM - 12:00 PM</td>
+            <td>Upcoming</td>
+        </tr>
+        `;
+    }
+
+    document.getElementById("exam-data").innerHTML = `
+
+    <table>
+
+        <tr>
+            <th>Subject Code</th>
+            <th>Subject</th>
+            <th>Exam Type</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+        </tr>
+
+        ${exams}
+
+    </table>
+    `;
+}
+
+    </script>
+    <script>
+
+function toggleMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("theme", "dark");
+    }
+
+    else {
+
+        localStorage.setItem("theme", "light");
+    }
+}
+
+window.onload = function () {
+
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+    }
+}
+
+</script>
+
+</body>
+
+</html>

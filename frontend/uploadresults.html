@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Upload Results</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Academic Management System</h1>
+
+        <a href="admin.html">
+            <button class="logout-btn">Back</button>
+        </a>
+
+    </div>
+
+    <div class="hallticket-container">
+
+        <h2>Upload Semester Results</h2>
+
+        <div class="ticket-box">
+
+            <label>Student Roll Number</label>
+
+            <br><br>
+
+            <input type="text" id="rollno" placeholder="Enter Roll Number">
+
+            <br><br><br>
+
+            <label>Select Semester</label>
+
+            <br><br>
+
+            <select id="semester">
+
+                <option>I - I</option>
+                <option>I - II</option>
+                <option>II - I</option>
+                <option>II - II</option>
+                <option>III - I</option>
+                <option>III - II</option>
+                <option>IV - I</option>
+                <option>IV - II</option>
+
+            </select>
+
+            <br><br><br>
+
+            <label>Result Status</label>
+
+            <br><br>
+
+            <select id="status">
+
+                <option>Published</option>
+                <option>Pending</option>
+                <option>Withheld</option>
+
+            </select>
+
+            <br><br><br>
+
+            <button class="download-btn" onclick="publishResults()">
+                Publish Results
+            </button>
+
+            <br><br>
+
+            <h3 id="message"></h3>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function publishResults() {
+
+            let roll = document.getElementById("rollno").value;
+            let sem = document.getElementById("semester").value;
+            let status = document.getElementById("status").value;
+
+            document.getElementById("message").innerHTML =
+            "Results for " + roll + " (" + sem + ") successfully marked as " + status;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

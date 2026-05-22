@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Total Students</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Academic Management System</h1>
+
+        <button onclick="toggleMode()" class="logout-btn">
+    🌙 Mode
+</button>
+
+<a href="dashboard.html">
+    <button class="logout-btn">Back</button>
+</a>
+
+    </div>
+
+    <div class="hallticket-container">
+
+        <h2>Student Records</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+    <h3>Total Students</h3>
+
+    <p>523 Registered Students</p>
+
+    <br>
+
+    <p><strong>CSE Students :</strong> 210</p>
+
+    <p><strong>ECE Students :</strong> 145</p>
+
+    <p><strong>EEE Students :</strong> 82</p>
+
+    <p><strong>MECH Students :</strong> 56</p>
+
+    <p><strong>CIVIL Students :</strong> 30</p>
+
+</div>
+
+            
+
+        <br><br>
+
+        <div class="ticket-box">
+
+            <h2>Registered Students List</h2>
+            <br>
+
+<input type="text"
+       id="studentSearch"
+       placeholder="Search Student..."
+       onkeyup="searchStudents()"
+       style="
+       width: 300px;
+       padding: 12px;
+       border-radius: 8px;
+       border: 1px solid gray;
+       font-size: 16px;">
+
+            <table>
+
+                <tr>
+                    <th>Roll Number</th>
+                    <th>Student Name</th>
+                    <th>Department</th>
+                    <th>Year</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+    <td>23R21A05AK</td>
+    <td>Edunuri Rithika</td>
+    <td>CSE</td>
+    <td>2nd Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>23R21A05AL</td>
+    <td>Gajjale Sowmya</td>
+    <td>CSE</td>
+    <td>2nd Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>23R21A05AF</td>
+    <td>Chukka Pallavi</td>
+    <td>CSE</td>
+    <td>2nd Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>23R21A05AP</td>
+    <td>Gopishetty Jyothi</td>
+    <td>CSE</td>
+    <td>2nd Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>23R21A05BG</td>
+    <td>Chukka Harshitha</td>
+    <td>CSE</td>
+    <td>2nd Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>24R21A0501</td>
+    <td>A. Sai Charan</td>
+    <td>ECE</td>
+    <td>1st Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>24R21A0502</td>
+    <td>B. Likitha</td>
+    <td>ECE</td>
+    <td>1st Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>24R21A0503</td>
+    <td>C. Naveen</td>
+    <td>ECE</td>
+    <td>1st Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>24R21A0504</td>
+    <td>D. Poojitha</td>
+    <td>ECE</td>
+    <td>1st Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>24R21A0505</td>
+    <td>E. Mahesh</td>
+    <td>ECE</td>
+    <td>1st Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>23R21A0201</td>
+    <td>F. Venkatesh</td>
+    <td>EEE</td>
+    <td>2nd Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>23R21A0202</td>
+    <td>G. Sravani</td>
+    <td>EEE</td>
+    <td>2nd Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>22R21A0301</td>
+    <td>H. Akhil</td>
+    <td>MECH</td>
+    <td>3rd Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>22R21A0302</td>
+    <td>I. Deepika</td>
+    <td>MECH</td>
+    <td>3rd Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>21R21A0101</td>
+    <td>J. Kiran</td>
+    <td>CIVIL</td>
+    <td>4th Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>21R21A0102</td>
+    <td>K. Bhavana</td>
+    <td>CIVIL</td>
+    <td>4th Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>22R21A0401</td>
+    <td>L. Harika</td>
+    <td>CSE</td>
+    <td>3rd Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>22R21A0402</td>
+    <td>M. Rahul</td>
+    <td>CSE</td>
+    <td>3rd Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>21R21A0401</td>
+    <td>N. Sushmitha</td>
+    <td>CSE</td>
+    <td>4th Year</td>
+    <td>Active</td>
+</tr>
+
+<tr>
+    <td>21R21A0402</td>
+    <td>O. Praneeth</td>
+    <td>CSE</td>
+    <td>4th Year</td>
+    <td>Active</td>
+</tr>
+
+            </table>
+
+        </div>
+
+    </div>
+    <script>
+
+function searchStudents() {
+
+    let input = document.getElementById("studentSearch").value.toLowerCase();
+
+    let table = document.querySelector("table");
+
+    let tr = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < tr.length; i++) {
+
+        let rowText = tr[i].textContent.toLowerCase();
+
+        if (rowText.includes(input)) {
+
+            tr[i].style.display = "";
+
+        }
+
+        else {
+
+            tr[i].style.display = "none";
+
+        }
+    }
+}
+
+</script>
+<script>
+
+function toggleMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("theme", "dark");
+    }
+
+    else {
+
+        localStorage.setItem("theme", "light");
+    }
+}
+
+window.onload = function () {
+
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+    }
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Faculty Members</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Academic Management System</h1>
+
+        <button onclick="toggleMode()" class="logout-btn">
+    🌙 Mode
+</button>
+
+<a href="dashboard.html">
+    <button class="logout-btn">Back</button>
+</a>
+
+    </div>
+
+    <div class="hallticket-container">
+
+        <h2>Faculty Management</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+    <h3>Total Faculty</h3>
+
+    <p>48 Active Faculty Members</p>
+
+    <br>
+
+    <p><strong>CSE Faculty :</strong> 15</p>
+
+    <p><strong>ECE Faculty :</strong> 10</p>
+
+    <p><strong>EEE Faculty :</strong> 8</p>
+
+    <p><strong>MECH Faculty :</strong> 9</p>
+
+    <p><strong>CIVIL Faculty :</strong> 6</p>
+
+</div>
+
+        </div>
+
+        <br><br>
+
+        <div class="ticket-box">
+
+            <h2>Faculty Members List</h2>
+            <br>
+
+<input type="text"
+       id="facultySearch"
+       placeholder="Search Faculty..."
+       onkeyup="searchFaculty()"
+       style="
+       width: 300px;
+       padding: 12px;
+       border-radius: 8px;
+       border: 1px solid gray;
+       font-size: 16px;">
+
+            <table>
+
+                <tr>
+                    <th>Faculty ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Designation</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>FAC101</td>
+                    <td>Dr. Anil Kumar</td>
+                    <td>CSE</td>
+                    <td>Professor</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>FAC102</td>
+                    <td>Mrs. Kavitha Rao</td>
+                    <td>ECE</td>
+                    <td>Associate Professor</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>FAC103</td>
+                    <td>Mr. Ramesh Naik</td>
+                    <td>EEE</td>
+                    <td>Assistant Professor</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>FAC104</td>
+                    <td>Dr. Swathi Reddy</td>
+                    <td>MECH</td>
+                    <td>Professor</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>FAC105</td>
+                    <td>Mr. Vinod Sharma</td>
+                    <td>CIVIL</td>
+                    <td>Assistant Professor</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>FAC106</td>
+                    <td>Mrs. Priya Singh</td>
+                    <td>CSE</td>
+                    <td>Associate Professor</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>FAC107</td>
+                    <td>Mrs. Rithika Reddy</td>
+                    <td>CSE</td>
+                    <td>Associate Professor</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>FAC108</td>
+                    <td>Mr. Vamshi Singh</td>
+                    <td>EEE</td>
+                    <td>Associate Professor</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>FAC109</td>
+                    <td>Mr. Rahul Reddy</td>
+                    <td>CSE</td>
+                    <td>Associate Professor</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>FAC110</td>
+                    <td>Mrs. Tara Edunuri </td>
+                    <td>ECE</td>
+                    <td>Associate Professor</td>
+                    <td>Active</td>
+                </tr>
+                <tr>
+                    <td>FAC111</td>
+                    <td>Mrs. Shruthi Reddy</td>
+                    <td>CSE</td>
+                    <td>Associate Professor</td>
+                    <td>Active</td>
+                </tr>
+                <tr>
+                    <td>FAC112</td>
+                    <td>Mr.Sai Nihil</td>
+                    <td>CIVIL</td>
+                    <td>Associate Professor</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>FAC113</td>
+                    <td>Mrs. Riya Singh</td>
+                    <td>CSE</td>
+                    <td>Associate Professor</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>FAC114</td>
+                    <td>Mrs. Krithika Nayak</td>
+                    <td>CIVIL</td>
+                    <td>Associate Professor</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>FAC115</td>
+                    <td>Mrs. Priyanka Singh</td>
+                    <td>EEE</td>
+                    <td>Associate Professor</td>
+                    <td>Active</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+    <script>
+
+function searchFaculty() {
+
+    let input = document.getElementById("facultySearch").value.toLowerCase();
+
+    let table = document.querySelector("table");
+
+    let tr = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < tr.length; i++) {
+
+        let rowText = tr[i].textContent.toLowerCase();
+
+        if (rowText.includes(input)) {
+
+            tr[i].style.display = "";
+
+        }
+
+        else {
+
+            tr[i].style.display = "none";
+
+        }
+    }
+}
+
+</script>
+<script>
+
+function toggleMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("theme", "dark");
+    }
+
+    else {
+
+        localStorage.setItem("theme", "light");
+    }
+}
+
+window.onload = function () {
+
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+    }
+}
+
+</script>
+
+</body>
+
+</html>

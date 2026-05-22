@@ -1,0 +1,48 @@
+body{
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.topbar{
+    background-color: #1f3a93;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.login-container{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.login-container h2{
+    font-size: 40px;
+    color: #1f3a93;
+}
+
+label{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input{
+    width: 250px;
+    height: 35px;
+}
+
+button{
+    width: 120px;
+    height: 45px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 22px;
+}
+button:hover{
+    background-color: #1e4fd8;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.3s;
+}

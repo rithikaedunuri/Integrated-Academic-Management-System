@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Hall Ticket</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Academic Management System</h1>
+
+        <button onclick="toggleMode()" class="logout-btn">
+    🌙 Mode
+</button>
+
+<a href="dashboard.html">
+    <button class="logout-btn">Back</button>
+</a>
+
+    </div>
+
+    <div class="hallticket-container">
+
+        <h2>Generate Hall Ticket</h2>
+
+        <div class="ticket-box">
+
+            <label>Enter Roll Number</label>
+
+            <br><br>
+
+            <input type="text" id="rollno" placeholder="Enter Roll Number">
+
+            <br><br><br>
+
+            <label>Select Semester</label>
+
+            <br><br>
+
+            <select id="semester">
+
+                <option>I - I</option>
+                <option>I - II</option>
+                <option>II - I</option>
+                <option>II - II</option>
+                <option>III - I</option>
+                <option>III - II</option>
+                <option>IV - I</option>
+                <option>IV - II</option>
+
+            </select>
+
+            <br><br><br>
+
+            <button class="download-btn" onclick="generateHallTicket()">
+                Generate Hall Ticket
+            </button>
+
+        </div>
+
+        <div id="hallticket-data"></div>
+
+    </div>
+
+    <script>
+
+        function generateHallTicket() {
+
+            let roll = document.getElementById("rollno").value.toLowerCase();
+            let sem = document.getElementById("semester").value;
+
+            let studentName = "";
+
+            if (roll === "23r21a05ak") {
+                studentName = "Edunuri Rithika";
+            }
+
+            else if (roll === "23r21a05al") {
+                studentName = "Gajjale Sowmya";
+            }
+
+            else if (roll === "23r21a05af") {
+                studentName = "Chukka Pallavi";
+            }
+
+            else if (roll === "23r21a05ap") {
+                studentName = "Gopishetty Jyothi";
+            }
+
+            else if (roll === "23r21a05bg") {
+                studentName = "Chukka Harshitha";
+            }
+
+            else {
+                studentName = "Student Not Found";
+            }
+
+            let subjects = "";
+
+            if (sem === "IV - I") {
+
+                subjects = `
+                    <tr><td>CS401</td><td>Database Management Systems</td><td>20-05-2026</td></tr>
+                    <tr><td>CS402</td><td>Operating Systems</td><td>22-05-2026</td></tr>
+                    <tr><td>CS403</td><td>Computer Networks</td><td>24-05-2026</td></tr>
+                    <tr><td>CS404</td><td>Software Engineering</td><td>26-05-2026</td></tr>
+                    <tr><td>CS405L</td><td>DBMS Lab</td><td>28-05-2026</td></tr>
+                    <tr><td>CS406L</td><td>OS Lab</td><td>30-05-2026</td></tr>
+                `;
+            }
+
+            else if (sem === "III - II") {
+
+                subjects = `
+                    <tr><td>CS301</td><td>Java Programming</td><td>10-05-2026</td></tr>
+                    <tr><td>CS302</td><td>Web Technologies</td><td>12-05-2026</td></tr>
+                    <tr><td>CS303</td><td>Data Structures</td><td>14-05-2026</td></tr>
+                    <tr><td>CS304</td><td>Python Programming</td><td>16-05-2026</td></tr>
+                    <tr><td>CS305L</td><td>Python Lab</td><td>18-05-2026</td></tr>
+                    <tr><td>CS306L</td><td>WT Lab</td><td>20-05-2026</td></tr>
+                `;
+            }
+
+            else {
+
+                subjects = `
+                    <tr><td>BS101</td><td>Mathematics</td><td>01-05-2026</td></tr>
+                    <tr><td>BS102</td><td>Physics</td><td>03-05-2026</td></tr>
+                    <tr><td>CS103</td><td>C Programming</td><td>05-05-2026</td></tr>
+                    <tr><td>HS104</td><td>English</td><td>07-05-2026</td></tr>
+                    <tr><td>CS105L</td><td>C Lab</td><td>09-05-2026</td></tr>
+                    <tr><td>BS106L</td><td>Physics Lab</td><td>11-05-2026</td></tr>
+                `;
+            }
+
+            document.getElementById("hallticket-data").innerHTML = `
+
+            <div class="ticket-box" id="ticket-content">
+
+                <div class="logo-section">
+
+                    <img src="assets/college-logo.png" class="college-logo">
+
+                </div>
+
+                <h2>Examination Hall Ticket</h2>
+
+                <p><strong>Name:</strong> ${studentName}</p>
+
+                <p><strong>Roll Number:</strong> ${roll}</p>
+
+                <p><strong>Department:</strong> Computer Science</p>
+
+                <p><strong>Semester:</strong> ${sem}</p>
+
+                <table>
+
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject</th>
+                        <th>Date</th>
+                    </tr>
+
+                    ${subjects}
+
+                </table>
+
+                <div class="instructions-section">
+
+                    <h3>***INSTRUCTIONS TO THE STUDENTS***</h3>
+
+                    <ol>
+
+                        <li>
+                            All the students must be present in the examination hall before
+                            the commencement of the examination and students who come after
+                            the commencement of the examination will not be allowed.
+                        </li>
+
+                        <li>
+                            Students should not carry any other material except Hall Ticket,
+                            Identity card and Scientific non-programmable calculator.
+                        </li>
+
+                        <li>
+                            Electronic gadgets are not permitted into examination halls.
+                        </li>
+
+                        <li>
+                            Students are allowed to leave the examination hall only after one
+                            and half hour from the commencement of the examination.
+                        </li>
+
+                        <li>
+                            Students must handover the answer books to the invigilator before
+                            leaving the examination hall.
+                        </li>
+
+                    </ol>
+
+                </div>
+
+                <div class="barcode-section">
+
+                    <img src="assets/barcode.png" class="barcode-img">
+
+                </div>
+
+                <div class="signature-section">
+
+                    <div>
+                        <p>__________________</p>
+                        <h4>Student Signature</h4>
+                    </div>
+
+                    <div>
+                        <p>__________________</p>
+                        <h4>Controller of Examinations</h4>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <br>
+
+            <button class="download-btn" onclick="downloadPDF()">
+                Download Hall Ticket
+            </button>
+
+            `;
+        }
+
+        function downloadPDF() {
+
+            const element = document.getElementById("ticket-content");
+
+            const opt = {
+
+                margin: 0.5,
+
+                filename: 'HallTicket.pdf',
+
+                image: {
+                    type: 'jpeg',
+                    quality: 1
+                },
+
+                html2canvas: {
+                    scale: 2,
+                    scrollX: 0,
+                    scrollY: 0
+                },
+
+                pagebreak: {
+                    mode: ['avoid-all']
+                },
+
+                jsPDF: {
+                    unit: 'in',
+                    format: 'a4',
+                    orientation: 'portrait'
+                }
+
+            };
+
+            html2pdf()
+                .set(opt)
+                .from(element)
+                .save();
+        }
+
+    </script>
+    <script>
+
+function toggleMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("theme", "dark");
+    }
+
+    else {
+
+        localStorage.setItem("theme", "light");
+    }
+}
+
+window.onload = function () {
+
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+    }
+}
+
+</script>
+
+</body>
+
+</html>

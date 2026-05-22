@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Academic Management System</h1>
+        <div id="clock"></div>
+        <button onclick="toggleMode()" class="logout-btn">
+    🌙 Mode
+</button>
+
+        <a href="login.html">
+            <button class="logout-btn">Logout</button>
+        </a>
+
+    </div>
+
+    <div class="dashboard-container">
+
+        <h2>Select Portal</h2>
+
+        <div class="cards">
+
+            <a href="hallticket.html" class="card-link">
+
+                <div class="card">
+
+                    <h3>Hall Ticket</h3>
+
+                    <p>Download your exam hall ticket.</p>
+
+                </div>
+
+            </a>
+
+            <a href="exams.html" class="card-link">
+
+                <div class="card">
+
+                    <h3>Examinations</h3>
+
+                    <p>Check exam schedules and seating.</p>
+
+                </div>
+
+            </a>
+
+            <a href="calendar.html" class="card-link">
+
+                <div class="card">
+
+                    <h3>Academic Calendar</h3>
+
+                    <p>View academic events and holidays.</p>
+
+                </div>
+
+            </a>
+
+            <a href="syllabus.html" class="card-link">
+
+                <div class="card">
+
+                    <h3>Syllabus</h3>
+
+                    <p>Access subject syllabus and materials.</p>
+
+                </div>
+
+            </a>
+
+            <a href="results.html" class="card-link">
+
+                <div class="card">
+
+                    <h3>Results</h3>
+
+                    <p>
+                        View semester grades, marks,
+                        SGPA and academic performance.
+                    </p>
+
+                </div>
+
+            </a>
+
+            <a href="admin.html" class="card-link">
+
+                <div class="card">
+
+                    <h3>Admin Panel</h3>
+
+                    <p>
+                        Manage students, exams
+                        and academic records.
+                    </p>
+
+                </div>
+
+            </a>
+            <a href="clubs.html" class="card-link">
+
+    <div class="card">
+
+        <h3>Clubs & Events</h3>
+
+        <p>
+            Explore hackathons, technical and cultural events
+        </p>
+
+    </div>
+
+</a>
+            <a href="attendance.html" class="card-link">
+
+    <div class="card">
+
+        <h3>Attendance</h3>
+
+        <p>
+            View attendance records and percentage
+        </p>
+
+    </div>
+
+</a>
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        <p>© 2026 Academic Management System | All Rights Reserved</p>
+
+    </footer>
+    <script>
+
+function updateClock() {
+
+    let now = new Date();
+
+    let date = now.toLocaleDateString();
+
+    let time = now.toLocaleTimeString();
+
+    document.getElementById("clock").innerHTML =
+        date + " | " + time;
+}
+
+setInterval(updateClock, 1000);
+
+updateClock();
+
+function toggleMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("theme", "dark");
+    }
+
+    else {
+
+        localStorage.setItem("theme", "light");
+    }
+}
+
+window.onload = function () {
+
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+    }
+}
+
+</script>
+
+
+</body>
+
+</html>

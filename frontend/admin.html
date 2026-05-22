@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Admin Dashboard</h1>
+
+        <button onclick="toggleMode()" class="logout-btn">
+    🌙 Mode
+</button>
+
+<a href="dashboard.html">
+    <button class="logout-btn">Back</button>
+</a>
+
+    </div>
+
+    <div class="dashboard-container">
+
+        <h2>Administrator Panel</h2>
+
+        <div class="cards">
+
+            <a href="students.html" class="card-link">
+
+    <div class="card">
+
+        <h3>Total Students</h3>
+
+        <p>
+            523 Registered Students
+        </p>
+
+    </div>
+
+</a>
+
+            <a href="examinations-admin.html" class="card-link">
+
+    <div class="card">
+
+        <h3>Examinations</h3>
+
+        <p>
+            12 Upcoming Exams Scheduled
+        </p>
+
+    </div>
+
+</a>
+
+            <a href="faculty.html" class="card-link">
+
+    <div class="card">
+
+        <h3>Faculty Members</h3>
+
+        <p>
+            48 Active Faculty Members
+        </p>
+
+    </div>
+
+</a>
+
+            <a href="notices.html" class="card-link">
+
+    <div class="card">
+
+        <h3>Notices</h3>
+
+        <p>5 New Circulars Published</p>
+
+    </div>
+
+</a>
+
+        </div>
+
+        <br><br><br>
+
+        <div class="cards">
+
+            <a href="addstudent.html" class="card-link">
+
+    <div class="card">
+
+        <h3>Add Student</h3>
+
+        <p>
+            Register new student records
+        </p>
+
+    </div>
+
+</a>
+
+           <a href="manageexams.html" class="card-link">
+
+    <div class="card">
+
+        <h3>Manage Exams</h3>
+
+        <p>
+            Schedule semester examinations
+        </p>
+
+    </div>
+
+</a>
+
+            <a href="uploadresults.html" class="card-link">
+
+    <div class="card">
+
+        <h3>Upload Results</h3>
+
+        <p>
+            Publish internal & semester results
+        </p>
+
+    </div>
+
+</a>
+
+            <a href="reports.html" class="card-link">
+
+    <div class="card">
+
+        <h3>Generate Reports</h3>
+
+        <p>
+            Download academic reports
+        </p>
+
+    </div>
+
+</a>
+
+        </div>
+
+    </div>
+    <script>
+
+function toggleMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("theme", "dark");
+    }
+
+    else {
+
+        localStorage.setItem("theme", "light");
+    }
+}
+
+window.onload = function () {
+
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+    }
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Manage Exams</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <h1>Academic Management System</h1>
+
+       <button onclick="toggleMode()" class="logout-btn">
+    🌙 Mode
+</button>
+
+<a href="dashboard.html">
+    <button class="logout-btn">Back</button>
+</a>
+
+    </div>
+
+    <div class="hallticket-container">
+
+        <h2>Manage Examination Schedule</h2>
+
+        <div class="ticket-box">
+
+            <label>Subject Name</label>
+
+            <br><br>
+
+            <input type="text" id="subject" placeholder="Enter Subject Name">
+
+            <br><br><br>
+
+            <label>Subject Code</label>
+
+            <br><br>
+
+            <input type="text" id="code" placeholder="Enter Subject Code">
+
+            <br><br><br>
+
+            <label>Select Semester</label>
+
+            <br><br>
+
+            <select id="semester">
+
+                <option>I - I</option>
+                <option>I - II</option>
+                <option>II - I</option>
+                <option>II - II</option>
+                <option>III - I</option>
+                <option>III - II</option>
+                <option>IV - I</option>
+                <option>IV - II</option>
+
+            </select>
+
+            <br><br><br>
+
+            <label>Exam Date</label>
+
+            <br><br>
+
+            <input type="date" id="date">
+
+            <br><br><br>
+
+            <label>Exam Time</label>
+
+            <br><br>
+
+            <input type="time" id="time">
+
+            <br><br><br>
+
+            <button class="download-btn" onclick="publishExam()">
+                Publish Exam Schedule
+            </button>
+
+            <br><br>
+
+            <h3 id="message"></h3>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function publishExam() {
+
+            let subject = document.getElementById("subject").value;
+            let code = document.getElementById("code").value;
+            let sem = document.getElementById("semester").value;
+            let date = document.getElementById("date").value;
+            let time = document.getElementById("time").value;
+
+            document.getElementById("message").innerHTML =
+            "Exam schedule for " + subject + " (" + code + ") successfully published for " + sem + " on " + date + " at " + time;
+
+        }
+
+    </script>
+    <script>
+
+function toggleMode() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("theme", "dark");
+    }
+
+    else {
+
+        localStorage.setItem("theme", "light");
+    }
+}
+
+window.onload = function () {
+
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+    }
+}
+
+</script>
+
+</body>
+
+</html>
